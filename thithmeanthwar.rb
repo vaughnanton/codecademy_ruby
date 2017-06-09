@@ -1,3 +1,9 @@
+=begin
+In this project, I combine control flow with
+a few Ruby string methods to Daffy Duckify a user's
+string, replacing "s" with "th".
+=end
+
 print "Please input text that you would like to daffify?"
 user_input = gets.chomp
 user_input.downcase!
