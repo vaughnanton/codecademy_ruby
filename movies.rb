@@ -22,10 +22,10 @@ movies = {
 choice = gets.chomp
 case choice
 when "add"
-    puts "Enter new movie title, using underscore (_) for spaces..."
+    puts "Enter a new movie title, using underscore (_) for spaces..."
     title = gets.chomp
     if movies[title.to_sym].nil?
-        puts "Enter rating for this movie (1-5)..."
+        puts "Enter a rating for this movie (1-5)..."
         rating = gets.chomp
         movies[title.to_sym] = rating.to_i
         puts "#{title} has been added with a rating of #{rating}."
@@ -33,12 +33,12 @@ when "add"
         puts "Error, that movie already exists!"
     end
 when "update"
-    puts "Enter movie title, using underscore (_) for spaces..."
+    puts "Enter a movie title, using underscore (_) for spaces..."
     title = gets.chomp
     if movies[title].nil?
         puts "Error, movie does not exist in library!"
     else
-        puts "Enter new rating (1-5)..."
+        puts "Enter a new rating (1-5)..."
         rating = gets.chomp
         movies[title.to_sym] = rating.to_i
         puts "#{title} has been updated with new rating of #{rating}."
@@ -48,7 +48,7 @@ when "display"
       puts "#{movie}: #{rating}"
     end
 when "delete"
-    puts "Enter movie title, using underscore (_) for spaces..."
+    puts "Enter a movie title, using underscore (_) for spaces..."
     title = gets.chomp
     if movies[title].nil?
         puts "Error, movie does not exist in library!"
