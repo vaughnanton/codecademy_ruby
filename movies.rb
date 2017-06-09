@@ -24,34 +24,38 @@ case choice
 when "add"
     puts "Enter new movie title, using underscore (_) for spaces..."
     title = gets.chomp
-    rating=gets.chomp.to_i
     if movies[title.to_sym].nil?
-        puts puts "Enter rating for this movie (1-5)..."
+        puts "Enter rating for this movie (1-5)..."
+        rating = gets.chomp
+        movies[title.to_sym] = rating.to_i
+        puts "#{title} has been added with a rating of #{rating}."
     else
-        movies[title]=rating
+        puts "Error, that movie already exists!"
     end
 when "update"
     puts "Enter movie title, using underscore (_) for spaces..."
-    title = gets.chomp.to_sym
+    title = gets.chomp
     if movies[title].nil?
-        puts "Error, movie does not exist in library."
+        puts "Error, movie does not exist in library!"
     else
         puts "Enter new rating (1-5)..."
-        rating = gets.chomp.to_i
-        movies[title]=rating
+        rating = gets.chomp
+        movies[title.to_sym] = rating.to_i
+        puts "#{title} has been updated with new rating of #{rating}."
     end
 when "display"
-    movies.each do |k,v|
-    puts "#{k}: #{v}"
+    movies.each do |movie,rating|
+      puts "#{movie}: #{rating}"
     end
 when "delete"
     puts "Enter movie title, using underscore (_) for spaces..."
-    title = gets.chomp.to_sym
+    title = gets.chomp
     if movies[title].nil?
-        puts "Error movie does not exist in library."
+        puts "Error, movie does not exist in library!"
+    else
+      movies.delete(title)
+      puts "Movie successfully deleted!"
+    end
 else
-    movies.delete(title)
-    puts "Movie successfully deleted!"
-end
-    puts "Error!"
+    puts "Please try again."
 end
