@@ -1,4 +1,4 @@
-codecademy - Ruby Course
+[codecademy - Ruby Course](https://www.codecademy.com/learn/learn-ruby)
 
 Section 1-10 covering the following topics: control flow, loops, arrays/hashes/symbols, blocks/sorting, refactoring, CRUD, blocks/procs/lambdas,  and object oriented programming.
 
